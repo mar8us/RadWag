@@ -1,6 +1,7 @@
 #ifndef MAIN_WINDOW_H
 #define MAIN_WINDOW_H
 
+#include "device_list_model.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -19,5 +20,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    DeviceListModel* deviceModel;
+
+    void addDeviceToList(const Device& device);
+
+private slots:
+    void on_addNewDiviceButton_clicked();
 };
 #endif // MAIN_WINDOW_H
