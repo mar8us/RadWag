@@ -23,6 +23,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(RADWAG
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        divace.h divace.cpp
+        device_list_model.h device_list_model.cpp
+        add_divice_form.h add_divice_form.cpp add_divice_form.ui
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET RADWAG APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
