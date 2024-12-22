@@ -50,3 +50,45 @@ QString Device::getParityString() const
             return "Unknown";
     }
 }
+
+Device::Parity Device::getParityFromString(const QString& value)
+{
+    if (value == "brak")
+        return Parity::None;
+    else if (value == "parzysta")
+        return Parity::Even;
+    else if (value == "nieparzysta")
+        return Parity::Odd;
+    else
+        return Parity::None;
+}
+
+void Device::setName(const QString& value)
+{
+    name = value;
+}
+
+void Device::setBaudRate(int value)
+{
+    baudRate = value;
+}
+
+void Device::setDataBits(int value)
+{
+    dataBits = value;
+}
+
+void Device::setParity(Parity value)
+{
+    parity = value;
+}
+
+void Device::setStopBits(int value)
+{
+    stopBits = value;
+}
+
+void Device::setParityFromString(const QString& value)
+{
+    parity = getParityFromString(value);
+}

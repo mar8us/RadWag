@@ -21,6 +21,14 @@ public:
     Parity getParity() const;
     int getStopBits() const;
     QString getParityString() const;
+    static Parity getParityFromString(const QString& value);
+
+    void setName(const QString& value);
+    void setBaudRate(int value);
+    void setDataBits(int value);
+    void setParity(Parity value);
+    void setStopBits(int value);
+    void setParityFromString(const QString& value);
 
 private:
     QString name;

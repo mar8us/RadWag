@@ -26,6 +26,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         divace.h divace.cpp
         device_list_model.h device_list_model.cpp
         add_divice_form.h add_divice_form.cpp add_divice_form.ui
+        device_storage.h device_storage.cpp
 
 
     )

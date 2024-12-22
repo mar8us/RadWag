@@ -1,9 +1,10 @@
 #include "device_list_model.h"
+#include "device_storage.h"
 
 
 DeviceListModel::DeviceListModel(QObject *parent) : QAbstractListModel(parent)
 {
-
+    devices = DeviceStorage::loadFromFile();
 }
 
 int DeviceListModel::rowCount(const QModelIndex &parent) const
@@ -27,4 +28,6 @@ void DeviceListModel::addDevice(const Device& device)
     beginInsertRows(QModelIndex(), devices.size(), devices.size());
     devices.append(device);
     endInsertRows();
+
+    DeviceStorage::saveToFile(devices);
 }
