@@ -52,7 +52,7 @@
      <attribute name="title">
       <string>Połączenie z urządzeniem</string>
      </attribute>
-     <widget class="QListView" name="listView">
+     <widget class="QListView" name="remDivListView">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -62,7 +62,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="statusConnLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -85,7 +85,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="portLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -111,7 +111,7 @@
        <string>Połącz</string>
       </property>
      </widget>
-     <widget class="QLabel" name="status">
+     <widget class="QLabel" name="statusLabel">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -133,7 +133,7 @@
        <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="titleRembDivLabel">
       <property name="geometry">
        <rect>
         <x>340</x>
@@ -151,7 +151,7 @@
        <string>Zapamiętane urządzenia</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineCurrMeasure">
+     <widget class="QLineEdit" name="parityEdit">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -164,7 +164,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineCurrMeasure_2">
+     <widget class="QLineEdit" name="speedTransEdit">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -177,7 +177,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineCurrMeasure_3">
+     <widget class="QLineEdit" name="bitEdit">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -190,7 +190,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineCurrMeasure_4">
+     <widget class="QLineEdit" name="divNameEdit">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -203,7 +203,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="divNameLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -216,7 +216,7 @@
        <string>Nazwa urządzenia:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="speedTransLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -229,7 +229,7 @@
        <string>Prędkość transmisji:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="bitLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -242,7 +242,7 @@
        <string>Bity danych:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="stopBitLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -255,7 +255,7 @@
        <string>Bity stopu:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLabel" name="parityLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -268,7 +268,7 @@
        <string>Kontrola parzystości:</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineCurrMeasure_5">
+     <widget class="QLineEdit" name="stopBitEdit">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -281,7 +281,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="connectButton_2">
+     <widget class="QPushButton" name="addDivToRemButton">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -294,7 +294,7 @@
        <string>Zapamiętaj</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QLabel" name="titleAddDivaceLabel">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -312,12 +312,12 @@
        <string>Dodaj urządzenie</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QLabel" name="titleConnLabel">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>300</y>
-        <width>171</width>
+        <width>81</width>
         <height>20</height>
        </rect>
       </property>
