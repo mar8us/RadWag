@@ -55,18 +55,24 @@
      <widget class="QListView" name="remDivListView">
       <property name="geometry">
        <rect>
-        <x>340</x>
+        <x>10</x>
         <y>40</y>
         <width>241</width>
         <height>192</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
      </widget>
      <widget class="QLabel" name="statusConnLabel">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>430</y>
+        <y>360</y>
         <width>121</width>
         <height>20</height>
        </rect>
@@ -78,9 +84,9 @@
      <widget class="QComboBox" name="serialPortCombo">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>340</y>
-        <width>82</width>
+        <x>150</x>
+        <y>390</y>
+        <width>111</width>
         <height>28</height>
        </rect>
       </property>
@@ -89,20 +95,20 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>340</y>
-        <width>121</width>
+        <y>390</y>
+        <width>81</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>Wybierz port:</string>
+       <string>Port:</string>
       </property>
      </widget>
      <widget class="QPushButton" name="connectButton">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>380</y>
+        <x>180</x>
+        <y>430</y>
         <width>83</width>
         <height>29</height>
        </rect>
@@ -114,10 +120,10 @@
      <widget class="QLabel" name="statusLabel">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>420</y>
-        <width>131</width>
-        <height>31</height>
+        <x>150</x>
+        <y>360</y>
+        <width>111</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -136,167 +142,6 @@
      <widget class="QLabel" name="titleRembDivLabel">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>10</y>
-        <width>171</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Zapamiętane urządzenia</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="parityEdit">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>160</y>
-        <width>131</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="speedTransEdit">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>80</y>
-        <width>131</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="bitEdit">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>120</y>
-        <width>131</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="divNameEdit">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>40</y>
-        <width>131</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="divNameLabel">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>40</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Nazwa urządzenia:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="speedTransLabel">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>80</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Prędkość transmisji:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="bitLabel">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>120</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Bity danych:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="stopBitLabel">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>200</y>
-        <width>131</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Bity stopu:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="parityLabel">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>160</y>
-        <width>141</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Kontrola parzystości:</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="stopBitEdit">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>200</y>
-        <width>131</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="addDivToRemButton">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>240</y>
-        <width>91</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Zapamiętaj</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="titleAddDivaceLabel">
-      <property name="geometry">
-       <rect>
         <x>10</x>
         <y>10</y>
         <width>171</width>
@@ -309,7 +154,20 @@
        </font>
       </property>
       <property name="text">
-       <string>Dodaj urządzenie</string>
+       <string>Wybierz urządzenie:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addNewDiviceButton">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>240</y>
+        <width>111</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dodaj nowe</string>
       </property>
      </widget>
      <widget class="QLabel" name="titleConnLabel">
@@ -328,6 +186,45 @@
       </property>
       <property name="text">
        <string>Połaczenie</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="diviceNameLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>330</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Urządzenie:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="divaceNameEdit">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>320</y>
+        <width>113</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="selectDiviceButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>91</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Wybierz</string>
       </property>
      </widget>
     </widget>
