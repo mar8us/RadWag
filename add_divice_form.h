@@ -20,12 +20,22 @@ signals:
     void deviceCreated(const Device& device);
 
 private slots:
-    void on_cancelButton_clicked();
-    void on_addDiviceButton_clicked();
+    void onAddDiviceButtonClicked();
+    void onCancelButtonClicked();
+    void onAddCommandButtonClicked();
 
 private:
     Ui::add_divice_form *ui;
+
+    void fillBaudRateCombo();
+    void fillDataBitsCombo();
     void fillParitySettingCombo();
+    void fillStopBitsCombo();
+
+    void setupCommandTable();
+
+    void addCommandToTable(const QString &desc, const QString &command);
+    void clearCommandTableInputs();
 };
 
 #endif // ADD_DIVICE_FORM_H
