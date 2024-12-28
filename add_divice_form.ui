@@ -107,19 +107,6 @@
     <string>Nazwa urządzenia:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="speedTransEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>60</y>
-     <width>131</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QComboBox" name="parityCombo">
    <property name="geometry">
     <rect>
@@ -128,32 +115,6 @@
      <width>131</width>
      <height>28</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="stopBitEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>180</y>
-     <width>131</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="bitEdit">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>100</y>
-     <width>131</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="readOnly">
-    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="bitLabel">
@@ -266,6 +227,36 @@
    </property>
    <property name="text">
     <string>Zapisane komendy urządzenia</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="baudRateCombo">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>60</y>
+     <width>131</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="dataBitsCombo">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>100</y>
+     <width>131</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="stopBitsCombo">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>180</y>
+     <width>131</width>
+     <height>28</height>
+    </rect>
    </property>
   </widget>
  </widget>
