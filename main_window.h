@@ -25,6 +25,8 @@ private:
     void addDeviceToList(const Device& device);
 
 private slots:
-    void on_addNewDiviceButton_clicked();
+    void onAddNewDiviceButtonClicked();
+    void onEditDiviceButtonClicked();
+    void onDeleteDiviceButtonClicked();
 };
 #endif // MAIN_WINDOW_H

@@ -65,7 +65,7 @@ void AddDiviceForm::on_addDiviceButton_clicked()
 
 void AddDiviceForm::fillParitySettingCombo()
 {
-    ui->parityCombo->addItem("none");
-    ui->parityCombo->addItem("even");
-    ui->parityCombo->addItem("odd");
+    ui->parityCombo->addItem("brak");
+    ui->parityCombo->addItem("parzysta");
+    ui->parityCombo->addItem("nieparzysta");
 }
