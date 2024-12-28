@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_addNewDiviceButton_clicked()
+void MainWindow::onAddNewDiviceButtonClicked()
 {
     std::unique_ptr<AddDiviceForm> dialogAddDivce;
     dialogAddDivce.reset(new AddDiviceForm(this));
