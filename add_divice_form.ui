@@ -169,7 +169,7 @@
     <string>Bity danych:</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QTableWidget" name="commandTableWidget">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -180,8 +180,8 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
-     <bold>true</bold>
+     <pointsize>10</pointsize>
+     <bold>false</bold>
     </font>
    </property>
   </widget>
