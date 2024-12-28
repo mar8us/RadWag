@@ -1,7 +1,7 @@
 #include "divace.h"
 
 
-Device::Device(const QString& name, int baudRate, int dataBits, Parity parity, int stopBits, QList<DivceCommand>& deviceCommands)
+Device::Device(const QString& name, QSerialPort::BaudRate baudRate, QSerialPort::DataBits dataBits, QSerialPort::Parity parity, QSerialPort::StopBits stopBits, QList<DivceCommand>& deviceCommands)
     : name(name)
     , baudRate(baudRate)
     , dataBits(dataBits)
@@ -17,51 +17,59 @@ QString Device::getName() const
     return name;
 }
 
-int Device::getBaudRate() const
+QSerialPort::BaudRate Device::getBaudRate() const
 {
     return baudRate;
 }
 
-int Device::getDataBits() const
+QSerialPort::DataBits Device::getDataBits() const
 {
     return dataBits;
 }
 
-Device::Parity Device::getParity() const
+QSerialPort::Parity Device::getParity() const
 {
     return parity;
 }
 
-int Device::getStopBits() const
+QSerialPort::StopBits Device::getStopBits() const
 {
     return stopBits;
 }
 
 QString Device::getParityString() const
 {
-    switch(parity)
+    switch (parity)
     {
-        case Parity::None:
-            return "brak";
-        case Parity::Even:
-            return "parzysta";
-        case Parity::Odd:
-            return "nieparzysta";
-        default:
-            return "Unknown";
+    case QSerialPort::Parity::NoParity:
+        return "brak";
+    case QSerialPort::Parity::EvenParity:
+        return "parzysta";
+    case QSerialPort::Parity::OddParity:
+        return "nieparzysta";
+    case QSerialPort::Parity::SpaceParity:
+        return "spacja";
+    case QSerialPort::Parity::MarkParity:
+        return "znacznik";
+    default:
+        return "nieznana";
     }
 }
 
-Device::Parity Device::getParityFromString(const QString& value)
+QSerialPort::Parity Device::getParityFromString(const QString& value)
 {
     if (value == "brak")
-        return Parity::None;
+        return QSerialPort::Parity::NoParity;
     else if (value == "parzysta")
-        return Parity::Even;
+        return QSerialPort::Parity::EvenParity;
     else if (value == "nieparzysta")
-        return Parity::Odd;
+        return QSerialPort::Parity::OddParity;
+    else if (value == "spacja")
+        return QSerialPort::Parity::SpaceParity;
+    else if (value == "znacznik")
+        return QSerialPort::Parity::MarkParity;
     else
-        return Parity::None;
+        return QSerialPort::Parity::NoParity;
 }
 
 const QList<DivceCommand>& Device::getCommands() const
@@ -74,22 +82,22 @@ void Device::setName(const QString& value)
     name = value;
 }
 
-void Device::setBaudRate(int value)
+void Device::setBaudRate(QSerialPort::BaudRate value)
 {
     baudRate = value;
 }
 
-void Device::setDataBits(int value)
+void Device::setDataBits(QSerialPort::DataBits value)
 {
     dataBits = value;
 }
 
-void Device::setParity(Parity value)
+void Device::setParity(QSerialPort::Parity parity)
 {
-    parity = value;
+    this->parity = parity;
 }
 
-void Device::setStopBits(int value)
+void Device::setStopBits(QSerialPort::StopBits value)
 {
     stopBits = value;
 }

@@ -26,43 +26,29 @@ AddDiviceForm::~AddDiviceForm()
 
 void AddDiviceForm::onAddDiviceButtonClicked()
 {
-    bool ok;
-    int baud = ui->speedTransEdit->text().toInt(&ok);
-    if(!ok)
+    if(ui->divNameEdit->text().isEmpty())
     {
-        QMessageBox::warning(this, "Błąd", "Nieprawidłowa prędkość transmisji");
+        QMessageBox::warning(this, "Błąd", "Pole \"Nazwa urządzenia\" nie może być puste!");
         return;
     }
 
-    int bits = ui->bitEdit->text().toInt(&ok);
-    if(!ok || (bits != 7 && bits != 8))
+    QSerialPort::BaudRate baudRate = static_cast<QSerialPort::BaudRate>(ui->baudRateCombo->currentData().toInt());
+    QSerialPort::DataBits dataBits = static_cast<QSerialPort::DataBits>(ui->dataBitsCombo->currentData().toInt());
+    QSerialPort::Parity parity = static_cast<QSerialPort::Parity>(ui->parityCombo->currentData().toInt());
+    QSerialPort::StopBits stopBits = static_cast<QSerialPort::StopBits>(ui->stopBitsCombo->currentData().toInt());
+
+    QList<DivceCommand> deviceCommands;
+    int rowCount = ui->commandTableWidget->rowCount();
+    for(int row = 0; row < rowCount; ++row)
     {
-        QMessageBox::warning(this, "Błąd", "Nieprawidłowa liczba bitów danych");
-        return;
+        QString commandDesc = ui->commandTableWidget->item(row, 0)->text();
+        QString command = ui->commandTableWidget->item(row, 1)->text();
+
+        DivceCommand divceCommand(commandDesc, command);
+        deviceCommands.append(divceCommand);
     }
 
-    Device::Parity parity;
-    QString parityText = ui->parityCombo->currentText();
-    if(parityText == "brak")
-        parity = Device::Parity::None;
-    else if(parityText == "parzysta")
-        parity = Device::Parity::Even;
-    else if(parityText == "nieparzysta")
-        parity = Device::Parity::Odd;
-    else
-    {
-        QMessageBox::warning(this, "Błąd", "Nieprawidłowa wartość parzystości");
-        return;
-    }
-
-    int stopBits = ui->stopBitEdit->text().toInt(&ok);
-    if(!ok || (stopBits != 1 && stopBits != 2))
-    {
-        QMessageBox::warning(this, "Błąd", "Nieprawidłowa liczba bitów stopu");
-        return;
-    }
-
-    Device newDevice(ui->divNameEdit->text(), baud, bits, parity, stopBits);
+    Device newDevice(ui->divNameEdit->text(), baudRate, dataBits, parity, stopBits, deviceCommands);
     emit deviceCreated(newDevice);
     accept();
 }
