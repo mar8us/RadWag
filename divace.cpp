@@ -1,12 +1,13 @@
 #include "divace.h"
 
 
-Device::Device(const QString& name, int baudRate, int dataBits, Parity parity, int stopBits)
+Device::Device(const QString& name, int baudRate, int dataBits, Parity parity, int stopBits, QList<DivceCommand>& deviceCommands)
     : name(name)
     , baudRate(baudRate)
     , dataBits(dataBits)
     , parity(parity)
     , stopBits(stopBits)
+    , commands(deviceCommands)
 {
 
 }
@@ -63,6 +64,11 @@ Device::Parity Device::getParityFromString(const QString& value)
         return Parity::None;
 }
 
+const QList<DivceCommand>& Device::getCommands() const
+{
+    return commands;
+}
+
 void Device::setName(const QString& value)
 {
     name = value;
@@ -91,4 +97,9 @@ void Device::setStopBits(int value)
 void Device::setParityFromString(const QString& value)
 {
     parity = getParityFromString(value);
+}
+
+void Device::setCommands(const QList<DivceCommand> &newCommands)
+{
+    commands = newCommands;
 }
