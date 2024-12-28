@@ -22,12 +22,16 @@ signals:
 private slots:
     void on_cancelButton_clicked();
     void on_addDiviceButton_clicked();
+    void onAddCommandButtonClicked();
 
 private:
     Ui::add_divice_form *ui;
 
     void fillParitySettingCombo();
     void setupCommandTable();
+
+    void addCommandToTable(const QString &desc, const QString &command);
+    void clearCommandTableInputs();
 };
 
 #endif // ADD_DIVICE_FORM_H

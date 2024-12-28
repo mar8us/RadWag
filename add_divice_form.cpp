@@ -79,3 +79,38 @@ void AddDiviceForm::setupCommandTable()
     ui->commandTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
+void AddDiviceForm::onAddCommandButtonClicked()
+{
+    QString commandDesc = ui->commandDescEdit->text();
+    QString command = ui->commandEdit->text();
+
+    if (commandDesc.isEmpty())
+    {
+        QMessageBox::warning(this, "Błąd", "Pole \"Opis\" nie może być puste");
+        return;
+    }
+
+    if(command.isEmpty())
+    {
+        QMessageBox::warning(this, "Błąd", "Pole \"Komenda\" nie może być puste");
+        return;
+    }
+
+    addCommandToTable(commandDesc, command);
+    clearCommandTableInputs();
+}
+
+void AddDiviceForm::addCommandToTable(const QString &desc, const QString &command)
+{
+    int row = ui->commandTableWidget->rowCount();
+    ui->commandTableWidget->insertRow(row);
+
+    ui->commandTableWidget->setItem(row, 0, new QTableWidgetItem(desc));
+    ui->commandTableWidget->setItem(row, 1, new QTableWidgetItem(command));
+}
+
+void AddDiviceForm::clearCommandTableInputs()
+{
+    ui->commandDescEdit->clear();
+    ui->commandEdit->clear();
+}
