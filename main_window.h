@@ -26,5 +26,7 @@ private:
 
 private slots:
     void onAddNewDiviceButtonClicked();
+    void onEditDiviceButtonClicked();
+    void onDeleteDiviceButtonClicked();
 };
 #endif // MAIN_WINDOW_H

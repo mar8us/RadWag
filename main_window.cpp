@@ -10,6 +10,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     deviceModel = new DeviceListModel(this);
     ui->remDivListView->setModel(deviceModel);
+
+    connect(ui->addNewDiviceButton, &QPushButton::clicked, this, &MainWindow::onAddNewDiviceButtonClicked);
+    connect(ui->editDiviceButton, &QPushButton::clicked, this, &MainWindow::onEditDiviceButtonClicked);
+    connect(ui->deleteDiviceButton, &QPushButton::clicked, this, &MainWindow::onDeleteDiviceButtonClicked);
 }
 
 MainWindow::~MainWindow()
@@ -25,6 +29,16 @@ void MainWindow::onAddNewDiviceButtonClicked()
     connect(dialogAddDivce.get(), &AddDiviceForm::deviceCreated, this, &MainWindow::addDeviceToList);
 
     dialogAddDivce->exec();
+}
+
+void MainWindow::onEditDiviceButtonClicked()
+{
+
+}
+
+void MainWindow::onDeleteDiviceButtonClicked()
+{
+
 }
 
 void MainWindow::addDeviceToList(const Device& device)
