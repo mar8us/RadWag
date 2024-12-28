@@ -20,8 +20,8 @@ signals:
     void deviceCreated(const Device& device);
 
 private slots:
-    void on_cancelButton_clicked();
-    void on_addDiviceButton_clicked();
+    void onAddDiviceButtonClicked();
+    void onCancelButtonClicked();
     void onAddCommandButtonClicked();
 
 private:

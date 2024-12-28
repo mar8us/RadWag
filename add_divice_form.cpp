@@ -9,6 +9,10 @@ AddDiviceForm::AddDiviceForm(QWidget *parent)
     ui->setupUi(this);
     setupCommandTable();
     fillParitySettingCombo();
+
+    connect(ui->addDiviceButton, &QPushButton::clicked, this, &AddDiviceForm::onAddDiviceButtonClicked);
+    connect(ui->cancelButton, &QPushButton::clicked, this, &AddDiviceForm::onCancelButtonClicked);
+    connect(ui->addCommandButton, &QPushButton::clicked, this, &AddDiviceForm::onAddCommandButtonClicked);
 }
 
 AddDiviceForm::~AddDiviceForm()
@@ -16,12 +20,7 @@ AddDiviceForm::~AddDiviceForm()
     delete ui;
 }
 
-void AddDiviceForm::on_cancelButton_clicked()
-{
-    close();
-}
-
-void AddDiviceForm::on_addDiviceButton_clicked()
+void AddDiviceForm::onAddDiviceButtonClicked()
 {
     bool ok;
     int baud = ui->speedTransEdit->text().toInt(&ok);
@@ -62,6 +61,11 @@ void AddDiviceForm::on_addDiviceButton_clicked()
     Device newDevice(ui->divNameEdit->text(), baud, bits, parity, stopBits);
     emit deviceCreated(newDevice);
     accept();
+}
+
+void AddDiviceForm::onCancelButtonClicked()
+{
+    close();
 }
 
 void AddDiviceForm::fillParitySettingCombo()
