@@ -7,6 +7,7 @@ AddDiviceForm::AddDiviceForm(QWidget *parent)
     , ui(new Ui::add_divice_form)
 {
     ui->setupUi(this);
+    setupCommandTable();
     fillParitySettingCombo();
 }
 
@@ -69,3 +70,12 @@ void AddDiviceForm::fillParitySettingCombo()
     ui->parityCombo->addItem("parzysta");
     ui->parityCombo->addItem("nieparzysta");
 }
+
+void AddDiviceForm::setupCommandTable()
+{
+    QStringList headers = {"OPIS", "KOMENDA"};
+    ui->commandTableWidget->setColumnCount(2);
+    ui->commandTableWidget->setHorizontalHeaderLabels(headers);
+    ui->commandTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+}
+
