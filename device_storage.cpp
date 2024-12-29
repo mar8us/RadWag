@@ -80,22 +80,7 @@ QList<Device> DeviceStorage::loadFromFile()
             continue;
 
         QJsonObject obj = value.toObject();
-        QList<DivceCommand> commands;
-
-        if(!obj.contains("commands") || obj["commands"].isArray())
-            continue;
-
-        QJsonArray commandArray = obj["commands"].toArray();
-
-        for(const auto& commandValue : commandArray)
-        {
-            if(!commandValue.isObject())
-                continue;
-
-            QJsonObject commandObj = commandValue.toObject();
-            DivceCommand command(commandObj["description"].toString(), commandObj["command"].toString());
-            commands.append(command);
-        }
+        QList<DivceCommand> commands = parseCommands(obj);
 
         QString name = obj["name"].toString();
         QSerialPort::BaudRate baudRate = static_cast<QSerialPort::BaudRate>(obj["baudRate"].toInt());
@@ -107,4 +92,25 @@ QList<Device> DeviceStorage::loadFromFile()
         devices.append(device);
     }
     return devices;
+}
+
+QList<DivceCommand> DeviceStorage::parseCommands(const QJsonObject& obj)
+{
+    QList<DivceCommand> commands;
+
+    if(!obj.contains("commands") || !obj["commands"].isArray())
+        return commands;
+
+    QJsonArray commandArray = obj["commands"].toArray();
+    for (const auto& commandValue : commandArray)
+    {
+        if (!commandValue.isObject())
+            continue;
+
+        QJsonObject commandObj = commandValue.toObject();
+        DivceCommand command(commandObj["description"].toString(), commandObj["command"].toString());
+        commands.append(command);
+    }
+
+    return commands;
 }

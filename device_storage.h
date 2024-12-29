@@ -16,6 +16,9 @@ public:
     static QString getStoragePath();
     static bool saveToFile(const QList<Device>& devices);
     static QList<Device> loadFromFile();
+
+private:
+    static QList<DivceCommand> parseCommands(const QJsonObject& obj);
 };
 
 #endif // DEVICE_STORAGE_H
